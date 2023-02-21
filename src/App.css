@@ -1,47 +1,60 @@
-@import url('https://cdn.syncfusion.com/ej2/material.css');
-
-.sidebar {
-  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
-}
-.nav-item,
-.navbar {
-  z-index: 10000;
-}
-@media  screen and (max-width:800px) {
-  .sidebar{
-    z-index: 10000000;
+:root {
+    --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+    --orange: #fca61f;
+    --black: #242d49;
+    --gray: #788097;
+    --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+    --pink: #FF919D;
+    --glass: rgba(255, 255, 255, 0.54);
+    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+    --activeItem: #f799a354;
+    --green :#369875;
+    --Hgreen :#11db2c54;
   }
-}
+  
+  .App {
+    /* padding: 0.5rem 3.5rem; */
+    color: var(--black);
+    background: rgb(226, 217, 217);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .AppGlass {
+    display: grid;
+    height: 100%;
+    width: 97%;
+    background: var(--glass);
+    border-radius: 2rem;
+    gap: 16px;
+    grid-template-columns: 11rem auto auto ;
+    
+   
+  }
 
-.e-dlg-center-center, .e-quick-popup-wrapper.e-device{
-  z-index: 1000000 !important;
-}
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: rgb(216, 216, 216);
-  border-radius: 40px;
-}
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
+  .sidebar{
+      position: relative;
+  }
 
-/* color-picker style  */
+  .sidebar.fixed{
+    position: fixed;
+  }
 
- #preview {
-  background: transparent
-    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png')
-    no-repeat;
-  display: inline-block;
-  height: 80px;
-  margin: 10px 0;
-  min-width: 300px;
-  max-width: 600px;
-  background-color: #008000;
-}
-
-.e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
-  border: none;
-}
+  @media screen and (max-width: 1200px) {
+    .AppGlass{
+      
+      grid-template-columns: 10% auto ;
+      overflow-y: scroll;
+    } 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .AppGlass{
+      grid-template-columns: 1fr;
+    } 
+  }
